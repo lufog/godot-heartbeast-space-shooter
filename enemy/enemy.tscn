@@ -11,3 +11,8 @@ texture = ExtResource("1_ss3xq")
 
 [node name="Collision" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-5, -2, 1, -7, 3, -7, 5, -5, 5, 5, 3, 7, 1, 7, -5, 2)
+
+[node name="VisibleNotifier" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="screen_exited" from="VisibleNotifier" to="." method="_on_visible_notifier_screen_exited"]
