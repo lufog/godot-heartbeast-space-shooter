@@ -1,14 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://dpfxc7o3tu8oo"]
+[gd_scene load_steps=4 format=3 uid="uid://dpfxc7o3tu8oo"]
 
+[ext_resource type="Script" path="res://world.gd" id="1_jp0j4"]
 [ext_resource type="PackedScene" uid="uid://dfr3rl07rqm85" path="res://ship/ship.tscn" id="1_km65d"]
 [ext_resource type="PackedScene" uid="uid://craadsppmi4i" path="res://enemy_spawner.tscn" id="3_tmnff"]
 
 [node name="World" type="Node"]
+script = ExtResource("1_jp0j4")
 
 [node name="Background" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color(0.0666667, 0.0666667, 0.0666667, 1)
+
+[node name="ScoreLabel" type="Label" parent="."]
+anchor_right = 1.0
+offset_bottom = 26.0
+text = "Score: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Ship" parent="." instance=ExtResource("1_km65d")]
 position = Vector2(16, 96)

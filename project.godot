@@ -8,6 +8,16 @@
 
 config_version=5
 
+_global_script_classes=[{
+"base": "Node",
+"class": &"World",
+"language": &"GDScript",
+"path": "res://world.gd"
+}]
+_global_script_class_icons={
+"World": ""
+}
+
 [application]
 
 config/name="Space Shooter"

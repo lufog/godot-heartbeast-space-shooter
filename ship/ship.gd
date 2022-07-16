@@ -1,6 +1,7 @@
 extends Area2D
 
 
+const EXPLOSION_EFFECT_SCENE: PackedScene = preload("res://explosion_effect/explosion_effect.tscn")
 const BULLET_SCENE: PackedScene = preload("res://bullet.tscn")
 
 @export var speed: int = 100
@@ -17,6 +18,12 @@ func _process(delta: float) -> void:
 		position.y += speed * delta
 	if Input.is_action_just_pressed("ui_accept"):
 		_fire_bullet()
+
+
+func _exit_tree() -> void:
+	var explosion_effect := EXPLOSION_EFFECT_SCENE.instantiate() as Sprite2D
+	get_parent().add_child(explosion_effect)
+	explosion_effect.global_position = global_position
 
 
 func _on_area_entered(area: Area2D) -> void:
