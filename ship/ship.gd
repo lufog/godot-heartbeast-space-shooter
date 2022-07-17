@@ -2,7 +2,7 @@ extends Area2D
 
 
 const EXPLOSION_EFFECT_SCENE: PackedScene = preload("res://explosion_effect/explosion_effect.tscn")
-const BULLET_SCENE: PackedScene = preload("res://bullet.tscn")
+const LASER_SCENE: PackedScene = preload("res://laser/laser.tscn")
 
 @export var speed: int = 100
 
@@ -17,7 +17,7 @@ func _process(delta: float) -> void:
 	if Input.is_action_pressed("ui_down"):
 		position.y += speed * delta
 	if Input.is_action_just_pressed("ui_accept"):
-		_fire_bullet()
+		_fire_laser()
 
 
 func _exit_tree() -> void:
@@ -31,7 +31,7 @@ func _on_area_entered(area: Area2D) -> void:
 	queue_free()
 
 
-func _fire_bullet() -> void:
-	var bullet := BULLET_SCENE.instantiate() as RigidDynamicBody2D
-	get_parent().add_child(bullet)
-	bullet.global_position = global_position
+func _fire_laser() -> void:
+	var laser := LASER_SCENE.instantiate() as RigidDynamicBody2D
+	get_parent().add_child(laser)
+	laser.global_position = global_position

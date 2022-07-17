@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8e0u86rbl6v8"]
+
+[ext_resource type="Script" path="res://laser/laser.gd" id="1_lqb7p"]
+[ext_resource type="Texture2D" uid="uid://dje887id7a3jt" path="res://laser/textures/laser.png" id="2_ay2qa"]
+[ext_resource type="AudioStream" uid="uid://xwx5y3l1e23c" path="res://laser/sounds/laser.wav" id="3_ym46a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ushr8"]
+size = Vector2(8, 6)
+
+[node name="Laser" type="RigidDynamicBody2D"]
+linear_velocity = Vector2(200, 0)
+script = ExtResource("1_lqb7p")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_ay2qa")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ushr8")
+
+[node name="VisibleNotifier" type="VisibleOnScreenNotifier2D" parent="."]
+scale = Vector2(0.4, 0.3)
+
+[node name="LaserSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ym46a")
+autoplay = true
+
+[connection signal="screen_exited" from="VisibleNotifier" to="." method="queue_free"]

@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://c15x33ch33rq7"]
+
+[ext_resource type="AudioStream" uid="uid://mwrbc0or1ndb" path="res://hit_effect/sounds/hit.wav" id="1_ncrni"]
+[ext_resource type="Script" path="res://hit_effect/hit_effect.gd" id="1_rhk66"]
+
+[sub_resource type="ParticlesMaterial" id="ParticlesMaterial_sbf2e"]
+emission_shape = 1
+emission_sphere_radius = 2.0
+particle_flag_disable_z = true
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 50.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_max = 1.5
+
+[node name="HitEffect" type="Node2D"]
+script = ExtResource("1_rhk66")
+
+[node name="HitParticles" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 10
+lifetime = 0.4
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticlesMaterial_sbf2e")
+
+[node name="HitSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_ncrni")
+autoplay = true
+
+[node name="LifetimeTimer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="LifetimeTimer" to="." method="_on_lifetime_timer_timeout"]

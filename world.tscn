@@ -1,8 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://dpfxc7o3tu8oo"]
+[gd_scene load_steps=5 format=3 uid="uid://dpfxc7o3tu8oo"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_jp0j4"]
 [ext_resource type="PackedScene" uid="uid://dfr3rl07rqm85" path="res://ship/ship.tscn" id="1_km65d"]
 [ext_resource type="PackedScene" uid="uid://craadsppmi4i" path="res://enemy_spawner.tscn" id="3_tmnff"]
+
+[sub_resource type="ParticlesMaterial" id="ParticlesMaterial_fs7gc"]
+emission_shape = 3
+emission_box_extents = Vector3(1, 90, 1)
+particle_flag_disable_z = true
+direction = Vector3(-1, 0, 0)
+spread = 0.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 100.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
 
 [node name="World" type="Node"]
 script = ExtResource("1_jp0j4")
@@ -12,15 +24,23 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color(0.0666667, 0.0666667, 0.0666667, 1)
 
+[node name="StarParticles" type="GPUParticles2D" parent="."]
+position = Vector2(320, 90)
+amount = 200
+lifetime = 7.0
+preprocess = 7.0
+process_material = SubResource("ParticlesMaterial_fs7gc")
+
+[node name="Ship" parent="." instance=ExtResource("1_km65d")]
+position = Vector2(16, 96)
+z_index = 1
+
+[node name="EnemySpawner" parent="." instance=ExtResource("3_tmnff")]
+position = Vector2(320, 0)
+
 [node name="ScoreLabel" type="Label" parent="."]
 anchor_right = 1.0
 offset_bottom = 26.0
 text = "Score: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="Ship" parent="." instance=ExtResource("1_km65d")]
-position = Vector2(16, 96)
-
-[node name="EnemySpawner" parent="." instance=ExtResource("3_tmnff")]
-position = Vector2(320, 0)
