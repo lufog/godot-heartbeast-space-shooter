@@ -25,6 +25,10 @@ run/main_scene="res://start_menu/start_menu.tscn"
 config/features=PackedStringArray("4.0", "Vulkan Clustered")
 config/icon="res://icon.png"
 
+[autoload]
+
+MusicPlayer="*res://music_player/music_player.tscn"
+
 [display]
 
 window/size/viewport_width=320

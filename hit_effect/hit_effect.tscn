@@ -29,6 +29,7 @@ process_material = SubResource("ParticlesMaterial_sbf2e")
 [node name="HitSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_ncrni")
 autoplay = true
+bus = &"Sounds"
 
 [node name="LifetimeTimer" type="Timer" parent="."]
 wait_time = 0.3

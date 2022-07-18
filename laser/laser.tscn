@@ -23,5 +23,6 @@ scale = Vector2(0.4, 0.3)
 [node name="LaserSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_ym46a")
 autoplay = true
+bus = &"Sounds"
 
 [connection signal="screen_exited" from="VisibleNotifier" to="." method="queue_free"]

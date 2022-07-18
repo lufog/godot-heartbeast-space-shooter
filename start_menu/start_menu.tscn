@@ -1,6 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://pn6gxudsyhx5"]
+[gd_scene load_steps=4 format=3 uid="uid://drvkxe7lfa0sk"]
 
-[ext_resource type="FontFile" uid="uid://c2nvgcl8v5xn" path="res://PixelRPG.ttf" id="1_2w6jc"]
+[ext_resource type="FontFile" uid="uid://c2nvgcl8v5xn" path="res://fonts/pixel_rpg.ttf" id="1_2w6jc"]
 [ext_resource type="Script" path="res://start_menu/start_menu.gd" id="1_hoh4v"]
 
 [sub_resource type="ParticlesMaterial" id="ParticlesMaterial_ii5rx"]
@@ -14,14 +14,6 @@ initial_velocity_min = 50.0
 initial_velocity_max = 100.0
 orbit_velocity_min = 0.0
 orbit_velocity_max = 0.0
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_luyby"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cim4w"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ujv8b"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7l3wb"]
 
 [node name="StartMenu" type="Node"]
 script = ExtResource("1_hoh4v")
@@ -38,17 +30,18 @@ lifetime = 7.0
 preprocess = 7.0
 process_material = SubResource("ParticlesMaterial_ii5rx")
 
-[node name="StartButton" type="Button" parent="."]
-offset_left = 120.0
-offset_top = 80.0
-offset_right = 200.0
-offset_bottom = 100.0
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="MessageLabel" type="Label" parent="CenterContainer"]
+offset_left = 121.0
+offset_top = 81.0
+offset_right = 199.0
+offset_bottom = 99.0
 theme_override_fonts/font = ExtResource("1_2w6jc")
 theme_override_font_sizes/font_size = 6
-theme_override_styles/normal = SubResource("StyleBoxEmpty_luyby")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_cim4w")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_ujv8b")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_7l3wb")
-text = "Start"
-
-[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+text = "Press Space to Start
+Press Esc to Quit"
+horizontal_alignment = 1
+vertical_alignment = 1

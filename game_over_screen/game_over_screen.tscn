@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvrvqs2h1n8va"]
+
+[ext_resource type="FontFile" uid="uid://c2nvgcl8v5xn" path="res://fonts/pixel_rpg.ttf" id="1_6g73b"]
+[ext_resource type="Script" path="res://game_over_screen/game_over_screen.gd" id="1_u8t3j"]
+
+[sub_resource type="ParticlesMaterial" id="ParticlesMaterial_wdhrd"]
+emission_shape = 3
+emission_box_extents = Vector3(1, 90, 1)
+particle_flag_disable_z = true
+direction = Vector3(-1, 0, 0)
+spread = 0.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 100.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+
+[node name="GameOverScreen" type="Node"]
+script = ExtResource("1_u8t3j")
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.0666667, 0.0666667, 0.0666667, 1)
+
+[node name="StarParticles" type="GPUParticles2D" parent="."]
+position = Vector2(320, 90)
+amount = 200
+lifetime = 7.0
+preprocess = 7.0
+process_material = SubResource("ParticlesMaterial_wdhrd")
+
+[node name="GameOverLabel" type="Label" parent="."]
+offset_left = 100.0
+offset_top = 60.0
+offset_right = 220.0
+offset_bottom = 80.0
+theme_override_fonts/font = ExtResource("1_6g73b")
+theme_override_font_sizes/font_size = 6
+text = "Game Over"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HighscoreLabel" type="Label" parent="."]
+offset_left = 100.0
+offset_top = 80.0
+offset_right = 220.0
+offset_bottom = 100.0
+theme_override_fonts/font = ExtResource("1_6g73b")
+theme_override_font_sizes/font_size = 6
+text = "Highscore : 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EscLabel" type="Label" parent="."]
+offset_left = 60.0
+offset_top = 160.0
+offset_right = 260.0
+offset_bottom = 180.0
+theme_override_fonts/font = ExtResource("1_6g73b")
+theme_override_font_sizes/font_size = 6
+text = "Press Esc to return to menu"
+horizontal_alignment = 1
+vertical_alignment = 1

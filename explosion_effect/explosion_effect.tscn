@@ -54,3 +54,4 @@ libraries = {
 [node name="ExplodeSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_w7q6u")
 autoplay = true
+bus = &"Sounds"

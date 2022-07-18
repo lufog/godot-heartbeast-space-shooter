@@ -1,9 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dpfxc7o3tu8oo"]
+[gd_scene load_steps=6 format=3 uid="uid://da3v4mtqhwacc"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_jp0j4"]
 [ext_resource type="PackedScene" uid="uid://dfr3rl07rqm85" path="res://ship/ship.tscn" id="1_km65d"]
 [ext_resource type="PackedScene" uid="uid://craadsppmi4i" path="res://enemy_spawner.tscn" id="3_tmnff"]
-[ext_resource type="FontFile" uid="uid://c2nvgcl8v5xn" path="res://PixelRPG.ttf" id="4_372xy"]
+[ext_resource type="FontFile" uid="uid://c2nvgcl8v5xn" path="res://fonts/pixel_rpg.ttf" id="4_372xy"]
 
 [sub_resource type="ParticlesMaterial" id="ParticlesMaterial_fs7gc"]
 emission_shape = 3
@@ -47,3 +47,5 @@ theme_override_font_sizes/font_size = 6
 text = "Score: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="player_died" from="Ship" to="." method="_on_ship_player_died"]
