@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://pn6gxudsyhx5"]
+
+[ext_resource type="FontFile" uid="uid://c2nvgcl8v5xn" path="res://PixelRPG.ttf" id="1_2w6jc"]
+[ext_resource type="Script" path="res://start_menu/start_menu.gd" id="1_hoh4v"]
+
+[sub_resource type="ParticlesMaterial" id="ParticlesMaterial_ii5rx"]
+emission_shape = 3
+emission_box_extents = Vector3(1, 90, 1)
+particle_flag_disable_z = true
+direction = Vector3(-1, 0, 0)
+spread = 0.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 100.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_luyby"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cim4w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ujv8b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7l3wb"]
+
+[node name="StartMenu" type="Node"]
+script = ExtResource("1_hoh4v")
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.0666667, 0.0666667, 0.0666667, 1)
+
+[node name="StarParticles" type="GPUParticles2D" parent="."]
+position = Vector2(320, 90)
+amount = 200
+lifetime = 7.0
+preprocess = 7.0
+process_material = SubResource("ParticlesMaterial_ii5rx")
+
+[node name="StartButton" type="Button" parent="."]
+offset_left = 120.0
+offset_top = 80.0
+offset_right = 200.0
+offset_bottom = 100.0
+theme_override_fonts/font = ExtResource("1_2w6jc")
+theme_override_font_sizes/font_size = 6
+theme_override_styles/normal = SubResource("StyleBoxEmpty_luyby")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_cim4w")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ujv8b")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7l3wb")
+text = "Start"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
