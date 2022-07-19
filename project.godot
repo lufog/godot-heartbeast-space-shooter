@@ -28,6 +28,7 @@ config/icon="res://icon.png"
 [autoload]
 
 MusicPlayer="*res://music_player/music_player.tscn"
+SaveAndLoad="*res://save_and_load.gd"
 
 [display]
 
