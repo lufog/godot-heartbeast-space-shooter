@@ -1,4 +1,4 @@
-extends RigidDynamicBody2D
+extends RigidBody2D
 
 
 const HIT_EFFECT_SCENE: PackedScene = preload("res://hit_effect/hit_effect.tscn")

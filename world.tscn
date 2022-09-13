@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://craadsppmi4i" path="res://enemy_spawner.tscn" id="3_tmnff"]
 [ext_resource type="FontFile" uid="uid://c2nvgcl8v5xn" path="res://fonts/pixel_rpg.ttf" id="4_372xy"]
 
-[sub_resource type="ParticlesMaterial" id="ParticlesMaterial_fs7gc"]
+[sub_resource type="ParticleProcessMaterial" id="ParticlesMaterial_fs7gc"]
 emission_shape = 3
 emission_box_extents = Vector3(1, 90, 1)
 particle_flag_disable_z = true
@@ -21,6 +21,7 @@ orbit_velocity_max = 0.0
 script = ExtResource("1_jp0j4")
 
 [node name="Background" type="ColorRect" parent="."]
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color(0.0666667, 0.0666667, 0.0666667, 1)
@@ -40,6 +41,7 @@ z_index = 1
 position = Vector2(320, 0)
 
 [node name="ScoreLabel" type="Label" parent="."]
+anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 21.0
 theme_override_fonts/font = ExtResource("4_372xy")

@@ -1,7 +1,7 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
+type="AudioStreamWAV"
 uid="uid://xwx5y3l1e23c"
 path="res://.godot/imported/laser.wav-0b12dcc1f9176603c8c3710a9b84f4e9.sample"
 

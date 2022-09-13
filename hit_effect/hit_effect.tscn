@@ -3,7 +3,7 @@
 [ext_resource type="AudioStream" uid="uid://mwrbc0or1ndb" path="res://hit_effect/sounds/hit.wav" id="1_ncrni"]
 [ext_resource type="Script" path="res://hit_effect/hit_effect.gd" id="1_rhk66"]
 
-[sub_resource type="ParticlesMaterial" id="ParticlesMaterial_sbf2e"]
+[sub_resource type="ParticleProcessMaterial" id="ParticlesMaterial_sbf2e"]
 emission_shape = 1
 emission_sphere_radius = 2.0
 particle_flag_disable_z = true

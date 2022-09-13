@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ushr8"]
 size = Vector2(8, 6)
 
-[node name="Laser" type="RigidDynamicBody2D"]
+[node name="Laser" type="RigidBody2D"]
 linear_velocity = Vector2(200, 0)
 script = ExtResource("1_lqb7p")
 

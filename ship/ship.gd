@@ -31,6 +31,6 @@ func _on_area_entered(area: Area2D) -> void:
 
 
 func _fire_laser() -> void:
-	var laser := LASER_SCENE.instantiate() as RigidDynamicBody2D
+	var laser := LASER_SCENE.instantiate() as RigidBody2D
 	get_parent().add_child(laser)
 	laser.global_position = global_position

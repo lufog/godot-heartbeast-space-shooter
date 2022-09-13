@@ -3,7 +3,7 @@
 [ext_resource type="FontFile" uid="uid://c2nvgcl8v5xn" path="res://fonts/pixel_rpg.ttf" id="1_2w6jc"]
 [ext_resource type="Script" path="res://start_menu/start_menu.gd" id="1_hoh4v"]
 
-[sub_resource type="ParticlesMaterial" id="ParticlesMaterial_ii5rx"]
+[sub_resource type="ParticleProcessMaterial" id="ParticlesMaterial_ii5rx"]
 emission_shape = 3
 emission_box_extents = Vector3(1, 90, 1)
 particle_flag_disable_z = true
@@ -19,6 +19,7 @@ orbit_velocity_max = 0.0
 script = ExtResource("1_hoh4v")
 
 [node name="Background" type="ColorRect" parent="."]
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color(0.0666667, 0.0666667, 0.0666667, 1)
@@ -31,6 +32,7 @@ preprocess = 7.0
 process_material = SubResource("ParticlesMaterial_ii5rx")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 

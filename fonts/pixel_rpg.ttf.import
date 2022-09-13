@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/pixel_rpg.ttf-f5ea8c86ecb30305c278091415cbe68
 [params]
 
 Rendering=null
-antialiased=true
+antialiasing=1
 generate_mipmaps=false
 multichannel_signed_distance_field=false
 msdf_pixel_range=8

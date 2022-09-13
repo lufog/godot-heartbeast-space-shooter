@@ -7,28 +7,28 @@ script = ExtResource("1_olnij")
 
 [node name="SpawnPoints" type="Node2D" parent="."]
 
-[node name="Position2D" type="Position2D" parent="SpawnPoints"]
+[node name="Position2D" type="Marker2D" parent="SpawnPoints"]
 position = Vector2(0, 20)
 
-[node name="Position2D2" type="Position2D" parent="SpawnPoints"]
+[node name="Position2D2" type="Marker2D" parent="SpawnPoints"]
 position = Vector2(0, 40)
 
-[node name="Position2D3" type="Position2D" parent="SpawnPoints"]
+[node name="Position2D3" type="Marker2D" parent="SpawnPoints"]
 position = Vector2(0, 60)
 
-[node name="Position2D4" type="Position2D" parent="SpawnPoints"]
+[node name="Position2D4" type="Marker2D" parent="SpawnPoints"]
 position = Vector2(0, 80)
 
-[node name="Position2D5" type="Position2D" parent="SpawnPoints"]
+[node name="Position2D5" type="Marker2D" parent="SpawnPoints"]
 position = Vector2(0, 100)
 
-[node name="Position2D6" type="Position2D" parent="SpawnPoints"]
+[node name="Position2D6" type="Marker2D" parent="SpawnPoints"]
 position = Vector2(0, 120)
 
-[node name="Position2D7" type="Position2D" parent="SpawnPoints"]
+[node name="Position2D7" type="Marker2D" parent="SpawnPoints"]
 position = Vector2(0, 140)
 
-[node name="Position2D8" type="Position2D" parent="SpawnPoints"]
+[node name="Position2D8" type="Marker2D" parent="SpawnPoints"]
 position = Vector2(0, 160)
 
 [node name="SpawnTimer" type="Timer" parent="."]
